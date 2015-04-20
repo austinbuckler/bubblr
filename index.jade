@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    .container
+        .content
+            .app-text-container
+                h1.title= title
+                p.subtext A fresh and bubbly social media search tool.
+            .search-container
+                .search
+                    form(action='/search', method='post')
+                        span.icon
+                            i.fa.fa-search
+                        input(type='search', name='searchQuery', placeholder='Search...')
+    #bubbles
+    script(src='javascripts/particles.js')
+    script(src='javascripts/bubbleparticles.js')

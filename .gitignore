@@ -1,0 +1,5 @@
+node_modules/**
+.idea/**
+bubbles.json
+public/stylesheets/normalize.css.map
+public/stylesheets/style.css.map

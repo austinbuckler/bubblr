@@ -1,0 +1,250 @@
+@import "normalize";
+
+/** ====================  THIS CSS NEEDS CLEANING UP q_q  ====================**/
+
+$isMobile: "only screen and (min-width: 320px) and (max-width: 480px)";
+$isTablet: "only screen and (min-width: 768px) and (max-device-width: 1024px)";
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@mixin hofoac {
+  @include optional-at-root(':hover') {
+    @content;
+  }
+
+  @include optional-at-root(':focus') {
+    @content;
+  }
+
+  @include optional-at-root(':active') {
+    @content;
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
+}
+
+.container {
+  @media #{$isMobile} {
+    margin: 0;
+    width: 20em;
+  }
+
+  @media #{$isTablet} {
+    width: 768px;
+  }
+
+  height: 100%;
+  min-height: 100%;
+  width: 1080px;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  -webkit-align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.content {
+  z-index: 3;
+  text-align: center;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+$search-text-color: #f5f5f5;
+$search-background-color: #4AA7EF;
+$search-icon-color: #69C6FF;
+$search-width: 460px;
+
+.search-container {
+  @media #{$isMobile} {
+    margin: 0;
+    width: 320px;
+  }
+
+  height: 50px;
+  position: relative;
+  width: $search-width + 45px;
+  margin: 0 auto;
+  display: block;
+}
+
+.search {
+  @media #{$isMobile} {
+    width: 320px;
+  }
+
+  width: $search-width;
+  white-space: nowrap;
+  position: relative;
+
+  input[type=search] {
+    @media #{$isMobile} {
+      width: 256px;
+    }
+
+    position: relative;
+    height: 50px;
+    width: $search-width;
+    padding-left: 45px;
+    border-radius: 6px;
+    border: none;
+    color: $search-text-color;
+    background: $search-background-color;
+
+    @include placeholder {
+      color: $search-text-color;
+    }
+
+    @include hofoac {
+      outline: none;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    margin-left: 15px;
+    margin-top: 15px;
+    z-index: 1;
+    color: $search-icon-color;
+  }
+
+}
+
+$app-title-color: #69C6FF;
+$app-subtext-color: #005BA3;
+
+.app-text-container {
+  margin-bottom: 1em;
+}
+
+.title {
+  color: $app-title-color;
+  margin: 0;
+}
+
+.subtext {
+  color: $app-subtext-color;
+  font-size: 0.78em;
+}
+
+#bubbles {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.micro-search {
+  position: fixed;
+  top: 3%;
+  left: 0;
+  width: 100%;
+  display: block;
+  z-index: 1;
+
+  .micro-container {
+    width: 60%;
+  }
+
+  form {
+    display: inline-block;
+    margin-left: 60px;
+  }
+
+  .title {
+    vertical-align: middle;
+    display: inline-block;
+
+    a {
+      text-decoration: none;
+      color: $app-title-color;
+
+      @include hofoac {
+        color: $app-title-color;
+      }
+    }
+  }
+}
+
+.results-container {
+  display: block;
+  margin-top: 25%;
+}
+
+$result-name-color: #88E5FF;
+$result-size: 128px;
+
+.results {
+  list-style: none;
+  text-align: left;
+
+  .result-category {
+    padding-left: 45px;
+    text-transform: lowercase;
+    color: $result-name-color;
+    font-size: 1.5em;
+    display: block;
+    font-weight: 300;
+
+    .result-set {
+      list-style: none;
+      width: 90%;
+      margin: 0 auto;
+      font-size: 0.6em;
+      display: block;
+
+      li {
+        display: inline-block;
+        margin: 20px;
+        .result {
+          width: $result-size;
+          height: $result-size;
+          max-width: $result-size;
+          max-height: $result-size;
+          display: block;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
