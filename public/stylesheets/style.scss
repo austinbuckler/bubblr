@@ -206,45 +206,46 @@ $app-subtext-color: #005BA3;
   }
 }
 
-.results-container {
-  display: block;
-  margin-top: 25%;
-}
-
 $result-name-color: #88E5FF;
 $result-size: 128px;
 
-.results {
-  list-style: none;
-  text-align: left;
+.results-container {
+  display: block;
+  margin-top: 100%;
 
-  .result-category {
-    padding-left: 45px;
-    text-transform: lowercase;
-    color: $result-name-color;
-    font-size: 1.5em;
-    display: block;
-    font-weight: 300;
+  .results {
+    list-style: none;
+    text-align: left;
 
-    .result-set {
-      list-style: none;
-      width: 90%;
-      margin: 0 auto;
-      font-size: 0.6em;
+    .result-category {
+      padding-left: 45px;
+      text-transform: lowercase;
+      color: $result-name-color;
+      font-size: 1.5em;
       display: block;
+      font-weight: 300;
 
-      li {
-        display: inline-block;
-        margin: 20px;
-        .result {
-          width: $result-size;
-          height: $result-size;
-          max-width: $result-size;
-          max-height: $result-size;
-          display: block;
-          border-radius: 50%;
+      .result-set {
+        list-style: none;
+        width: 90%;
+        margin: 0 auto;
+        font-size: 0.6em;
+        display: block;
+
+        li {
+          display: inline-block;
+          margin: 20px;
+          .result {
+            width: $result-size;
+            height: $result-size;
+            max-width: $result-size;
+            max-height: $result-size;
+            display: block;
+            border-radius: 50%;
+          }
         }
       }
     }
   }
 }
+

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var twitter = require('../mods/mod_twitter');
 var instagram = require('../mods/mod_instagram');
+var splashbase = require('../mods/mod_splashbase');
 
 router.get('/', function (req, res, next) {
     res.render('index', {title: 'bubblr'});
@@ -18,13 +19,15 @@ router.post('/search', function (req, res, next) {
     } else {
         twitter(searchQuery, function (twitterData) {
             instagram(searchQuery, function (instagramData) {
-                res.render('results', {title: 'bubblr', twitterData: twitterData, getOriginal:getOriginal, instagramData: instagramData});
-                //res.send('You searched... ' + searchQuery + '<br/>' +
-                //'and received:' +
-                //'<br/> ' + twitterData[0].text + '' +
-                //'as well as ' +
-                //'<br/>' +
-                //'<img src=' + instagramData[0].images.low_resolution.url + ' alt="" />');
+                splashbase(searchQuery, function(splashbaseData) {
+                    res.render('results', {
+                        title: 'bubblr',
+                        twitterData: twitterData,
+                        getOriginal: getOriginal,
+                        instagramData: instagramData,
+                        splashbaseData: splashbaseData
+                    });
+                });
             });
         });
     }

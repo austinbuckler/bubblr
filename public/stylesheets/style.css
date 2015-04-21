@@ -486,33 +486,32 @@ body {
 
 .results-container {
   display: block;
-  margin-top: 25%; }
-
-.results {
-  list-style: none;
-  text-align: left; }
-  .results .result-category {
-    padding-left: 45px;
-    text-transform: lowercase;
-    color: #88E5FF;
-    font-size: 1.5em;
-    display: block;
-    font-weight: 300; }
-    .results .result-category .result-set {
-      list-style: none;
-      width: 90%;
-      margin: 0 auto;
-      font-size: 0.6em;
-      display: block; }
-      .results .result-category .result-set li {
-        display: inline-block;
-        margin: 20px; }
-        .results .result-category .result-set li .result {
-          width: 128px;
-          height: 128px;
-          max-width: 128px;
-          max-height: 128px;
-          display: block;
-          border-radius: 50%; }
+  margin-top: 100%; }
+  .results-container .results {
+    list-style: none;
+    text-align: left; }
+    .results-container .results .result-category {
+      padding-left: 45px;
+      text-transform: lowercase;
+      color: #88E5FF;
+      font-size: 1.5em;
+      display: block;
+      font-weight: 300; }
+      .results-container .results .result-category .result-set {
+        list-style: none;
+        width: 90%;
+        margin: 0 auto;
+        font-size: 0.6em;
+        display: block; }
+        .results-container .results .result-category .result-set li {
+          display: inline-block;
+          margin: 20px; }
+          .results-container .results .result-category .result-set li .result {
+            width: 128px;
+            height: 128px;
+            max-width: 128px;
+            max-height: 128px;
+            display: block;
+            border-radius: 50%; }
 
 /*# sourceMappingURL=style.css.map */

@@ -29,6 +29,12 @@ block content
                                     li
                                         a(href='' + instagramData[x].link).result
                                             img(src='' + instagramData[x].images.thumbnail.url)
+                        li.result-category splashbase
+                            ul.result-set
+                                - for (var y = 0; y < 10; y++)
+                                    li
+                                        a(href='' + splashbaseData[y].large_url).result
+                                            img(src='' + splashbaseData[y].url)
 
 
     script(src='javascripts/vendor/jquery-1.10.1.min.js')
