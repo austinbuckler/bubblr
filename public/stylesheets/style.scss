@@ -213,8 +213,11 @@ $result-name-color: #88E5FF;
 $result-size: 128px;
 
 .results-container {
+  @media #{$isMobile} {
+    margin-top: 35%;
+  }
   display: block;
-  margin-top: 100%;
+  margin-top: 10%;
 
   .results {
     @media #{$isMobile} {
