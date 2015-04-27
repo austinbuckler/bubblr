@@ -18,6 +18,7 @@ router.post('/search', function (req, res, next) {
     if (isBlank(searchQuery) || searchQuery.isEmpty() || isEmpty(searchQuery)) {
         res.render('results', {title: 'bubblr', noData: 'You did not search for anything! '});
     } else {
+        searchQuery.trim();
         twitter(searchQuery, function (twitterData) {
             resultData.push(twitterData);
             instagram(searchQuery, function (instagramData) {

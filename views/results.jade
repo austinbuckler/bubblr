@@ -16,7 +16,7 @@ block content
                     h2=noData
                 else
                     ul.results
-                        - if (result !== null || typeof(result) !== 'undefined')
+                        - if (typeof(result) !== 'undefined' || result !== null)
                             - if (result[0].length !== 0)
                                 li.result-category Twitter
                                     ul.result-set
