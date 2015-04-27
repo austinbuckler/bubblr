@@ -16,25 +16,28 @@ block content
                     h2=noData
                 else
                     ul.results
-                        li.result-category Twitter
-                            ul.result-set
-                                - for (var i = 0; i < 10; i++)
-                                    li
-                                        a(href='https://twitter.com/' + twitterData[i].user.screen_name + '/status/'
-                                            + twitterData[i].id_str).result
-                                            img(src=getOriginal(twitterData[i].user.profile_image_url_https))
-                        li.result-category Instagram
-                            ul.result-set
-                                - for (var x = 0; x < 10; x++)
-                                    li
-                                        a(href='' + instagramData[x].link).result
-                                            img(src='' + instagramData[x].images.thumbnail.url)
-                        li.result-category splashbase
-                            ul.result-set
-                                - for (var y = 0; y < 10; y++)
-                                    li
-                                        a(href='' + splashbaseData[y].large_url).result
-                                            img(src='' + splashbaseData[y].url)
+                        - if (result[0].length !== 0)
+                            li.result-category Twitter
+                                ul.result-set
+                                    - for (var i = 0; i < 10; i++)
+                                        li
+                                            a(href='https://twitter.com/' + result[0][i].user.screen_name + '/status/'
+                                                + result[0][i].id_str).result
+                                                img(src=getOriginal(result[0][i].user.profile_image_url_https))
+                        - if (result[1].length !== 0)
+                            li.result-category Instagram
+                                ul.result-set
+                                    - for (var x = 0; x < 10; x++)
+                                        li
+                                            a(href='' + result[1][x].link).result
+                                                img(src='' + result[1][x].images.thumbnail.url)
+                        - if (result[2].length !== 0)
+                            li.result-category splashbase
+                                ul.result-set
+                                    - for (var y = 0; y < 10; y++)
+                                        li
+                                            a(href='' + result[2][y].large_url).result
+                                                img(src='' + result[2][y].url)
 
 
     script(src='javascripts/vendor/jquery-1.10.1.min.js')
