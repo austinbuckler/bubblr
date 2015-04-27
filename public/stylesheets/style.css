@@ -463,12 +463,21 @@ body {
   z-index: 1; }
   .micro-search .micro-container {
     width: 60%; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      .micro-search .micro-container {
+        width: auto; } }
   .micro-search form {
     display: inline-block;
     margin-left: 60px; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      .micro-search form {
+        margin: 0; } }
   .micro-search .title {
     vertical-align: middle;
     display: inline-block; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      .micro-search .title {
+        display: none; } }
     .micro-search .title a {
       text-decoration: none;
       color: #69C6FF; }
@@ -485,6 +494,11 @@ body {
   .results-container .results {
     list-style: none;
     text-align: left; }
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+      .results-container .results {
+        padding: 0;
+        margin: 0 auto;
+        width: 80%; } }
     .results-container .results .result-category {
       padding-left: 45px;
       text-transform: lowercase;
@@ -492,15 +506,25 @@ body {
       font-size: 1.5em;
       display: block;
       font-weight: 300; }
+      @media only screen and (min-width: 320px) and (max-width: 480px) {
+        .results-container .results .result-category {
+          padding-left: 0; } }
       .results-container .results .result-category .result-set {
         list-style: none;
         width: 90%;
         margin: 0 auto;
         font-size: 0.6em;
         display: block; }
+        @media only screen and (min-width: 320px) and (max-width: 480px) {
+          .results-container .results .result-category .result-set {
+            width: auto;
+            margin: 0; } }
         .results-container .results .result-category .result-set li {
           display: inline-block;
           margin: 20px; }
+          @media only screen and (min-width: 320px) and (max-width: 480px) {
+            .results-container .results .result-category .result-set li {
+              margin: 10px; } }
           .results-container .results .result-category .result-set li .result {
             width: 128px;
             height: 128px;
@@ -508,5 +532,11 @@ body {
             max-height: 128px;
             display: block;
             border-radius: 50%; }
+            @media only screen and (min-width: 320px) and (max-width: 480px) {
+              .results-container .results .result-category .result-set li .result {
+                width: 64px;
+                height: 64px;
+                max-width: 64px;
+                max-height: 64px; } }
 
 /*# sourceMappingURL=style.css.map */
