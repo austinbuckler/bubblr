@@ -1,3 +1,19 @@
+var bubbleAmt = function() {
+    if (screen.width <= 480) {
+        return 10;
+    } else {
+        return 20;
+    }
+};
+
+var bubbleSize = function() {
+    if (screen.width <= 480) {
+        return 30;
+    } else {
+        return 60;
+    }
+}
+
 particlesJS('bubbles', {
     particles: {
         color: '#61BEFF',
@@ -12,9 +28,9 @@ particlesJS('bubbles', {
                 sync: true
             }
         },
-        size: 60,
+        size: bubbleSize,
         size_random: true,
-        nb: 20,
+        nb: bubbleAmt,
         line_linked: {
             enable_auto: false,
             distance: -1,
