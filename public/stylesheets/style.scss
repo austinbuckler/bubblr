@@ -108,7 +108,7 @@ $search-width: 460px;
 
   input[type=search] {
     @media #{$isMobile} {
-      width: 65%;
+      width: 60%;
     }
 
     position: relative;
