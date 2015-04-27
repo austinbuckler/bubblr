@@ -193,7 +193,6 @@ $app-subtext-color: #005BA3;
 
   .title {
     @media #{$isMobile} {
-      display: none;
       padding: 5px;
     }
     vertical-align: middle;
