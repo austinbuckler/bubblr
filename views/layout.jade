@@ -14,3 +14,11 @@ html
 
     body
         block content
+
+        script(src='javascripts/vendor/jquery-1.10.1.min.js')
+        script(src='javascripts/fastclick.min.js')
+        script(type='text/javascript').
+            $(function () {
+                FastClick.attach(document.body);
+            });
+        block afterJS
