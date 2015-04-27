@@ -12,7 +12,7 @@ var bubbleSize = function() {
     } else {
         return 60;
     }
-}
+};
 
 particlesJS('bubbles', {
     particles: {
@@ -28,9 +28,9 @@ particlesJS('bubbles', {
                 sync: true
             }
         },
-        size: bubbleSize,
+        size: bubbleSize(),
         size_random: true,
-        nb: bubbleAmt,
+        nb: bubbleAmt(),
         line_linked: {
             enable_auto: false,
             distance: -1,
