@@ -14,18 +14,20 @@ router.get('/search', function(req, res, next) {
 
 router.post('/search', function (req, res, next) {
     var searchQuery = req.body.searchQuery;
+    var resultData = [];
     if (isBlank(searchQuery) || searchQuery.isEmpty() || isEmpty(searchQuery)) {
         res.render('results', {title: 'bubblr', noData: 'You did not search for anything! '});
     } else {
         twitter(searchQuery, function (twitterData) {
+            resultData.push(twitterData);
             instagram(searchQuery, function (instagramData) {
+                resultData.push(instagramData);
                 splashbase(searchQuery, function(splashbaseData) {
+                    resultData.push(splashbaseData);
                     res.render('results', {
                         title: 'bubblr',
-                        twitterData: twitterData,
-                        getOriginal: getOriginal,
-                        instagramData: instagramData,
-                        splashbaseData: splashbaseData
+                        result: resultData,
+                        getOriginal: getOriginal
                     });
                 });
             });
