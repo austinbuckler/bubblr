@@ -1,0 +1,16 @@
+{
+  "twitter": {
+    "consumerKey": "OU58cyAwuNqOw6Tx8kcmDHgf8",
+    "consumerSecret": "ba7wfSX97nKHEu7apdo5qaJkmHFn7TcMpnG6zoRVaA6AamPm6s",
+    "accessToken": "205069040-P2TVTAgfe3GaMF4U5xenMBsAFy3ocAgXfoJltFI1",
+    "accessSecret": "eVzXfN1E0GsJooM5Fm8goEXsnZO2N3Sob1SBxQw7sywxq"
+  },
+  "instagram": {
+    "clientId": "d6d711d55f2b48bf8d6706da6fd728ce",
+    "clientSecret": "4f0b828512cb4877a76a010238d9e144"
+  },
+  "unsplash": {
+  },
+  "500px": {
+  }
+}
