@@ -108,7 +108,8 @@ $search-width: 460px;
 
   input[type=search] {
     @media #{$isMobile} {
-      width: 256px;
+      border-radius: 3px;
+      width: 70%;
     }
 
     position: relative;
@@ -176,6 +177,7 @@ $app-subtext-color: #005BA3;
   .micro-container {
     @media #{$isMobile} {
       width: auto;
+      height: 50px;
     }
     width: 60%;
   }
@@ -183,17 +185,16 @@ $app-subtext-color: #005BA3;
   form {
     @media #{$isMobile} {
       margin: 0;
+      float: right;
     }
-
     display: inline-block;
     margin-left: 60px;
-
-
   }
 
   .title {
     @media #{$isMobile} {
       display: none;
+      padding: 5px;
     }
     vertical-align: middle;
     display: inline-block;
