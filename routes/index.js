@@ -19,11 +19,17 @@ router.post('/search', function (req, res, next) {
         res.render('results', {title: 'bubblr', noData: 'You did not search for anything! '});
     } else {
         twitter(searchQuery, function (twitterData) {
-            resultData.push(twitterData);
+            if (twitterData !== null) {
+                resultData.push(twitterData);
+            }
             instagram(searchQuery, function (instagramData) {
-                resultData.push(instagramData);
+                if (instagramData !== null) {
+                    resultData.push(instagramData);
+                }
                 splashbase(searchQuery, function(splashbaseData) {
-                    resultData.push(splashbaseData);
+                    if (splashbaseData !== null) {
+                        resultData.push(splashbaseData);
+                    }
                     res.render('results', {
                         title: 'bubblr',
                         theSearchQuery: searchQuery,

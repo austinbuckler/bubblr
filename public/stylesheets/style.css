@@ -454,6 +454,9 @@ body {
   left: 0;
   overflow: hidden; }
 
+.term-string {
+  display: block; }
+
 .micro-search {
   position: fixed;
   top: 3%;

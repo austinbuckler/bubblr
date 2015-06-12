@@ -13,9 +13,9 @@ block content
                         input(type='search', name='searchQuery', placeholder='Search...')
             .results-container
                 if noData
-                    h2=noData
+                    h2.term-string=noData
                 else
-                    h2 You searched for "#{theSearchQuery}" and we found #{result.length * 10} results.
+                    h2.term-string You searched for "#{theSearchQuery}" and we found #{result.length * 10} results.
                     ul.results
                         li.result-category Twitter
                             ul.result-set
@@ -30,12 +30,16 @@ block content
                                     li
                                         a(href='' + result[1][x].link).result
                                             img(src='' + result[1][x].images.thumbnail.url)
-                        li.result-category splashbase
-                            ul.result-set
-                                - for (var y = 0; y < 10; y++)
-                                    li
-                                        a(href='' + result[2][y].large_url).result
-                                            img(src='' + result[2][y].url)
+                        if result[2] !== undefined
+                            li.result-category splashbase
+                                ul.result-set
+                                    - for (var y = 0; y < 10; y++)
+                                        if result[2][y] !== undefined
+                                            li
+                                                a(href='' + result[2][y].large_url).result
+                                                    img(src='' + result[2][y].url)
+                                        else
+                                            break
 
 block afterJS
     script(src='javascripts/imagesLoaded.js')
