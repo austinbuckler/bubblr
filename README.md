@@ -1,4 +1,5 @@
 ![bubblr](/assets/bubblr.png)  
+Click [here](http://bubblr-app.herokuapp.com/) to try the live version of this!
 
 A fresh and bubbly social media search tool.
 
